@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portofolio | Muhammad Hanif Afifudin</title>
+  </head>
+  <body>
+    <div class="desktop">
+      <nav class="desktop-icons" aria-label="Desktop icons">
+        <button
+          class="icon"
+          type="button"
+          data-window="projects"
+          aria-label="Open Projects"
+        >
+          <span class="icon-tile" aria-hidden="true">
+            <span class="icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="M3 9h18"></path>
+                <path d="M8 4v5"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="icon-label">Projects</span>
+        </button>
+
+        <button
+          class="icon"
+          type="button"
+          data-window="skills"
+          aria-label="Open Skills"
+        >
+          <span class="icon-tile" aria-hidden="true">
+            <span class="icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path>
+                <path d="M12 12l8-4.5"></path>
+                <path d="M12 12v9"></path>
+                <path d="M12 12L4 7.5"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="icon-label">Skills</span>
+        </button>
+
+        <button
+          class="icon"
+          type="button"
+          data-window="about"
+          aria-label="Open About"
+        >
+          <span class="icon-tile" aria-hidden="true">
+            <span class="icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="8.2"></circle>
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                ></circle>
+                <path d="M12 11.2v6"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="icon-label">About</span>
+        </button>
+
+        <button
+          class="icon"
+          type="button"
+          data-window="contact"
+          aria-label="Open Contact"
+        >
+          <span class="icon-tile" aria-hidden="true">
+            <span class="icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect>
+                <path d="M4 7l8 6 8-6"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="icon-label">Contact</span>
+        </button>
+
+        <button
+          class="icon"
+          type="button"
+          data-window="cv"
+          aria-label="Open CV"
+        >
+          <span class="icon-tile" aria-hidden="true">
+            <span class="icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M7 3.5h7.5L19.5 9v11.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5z"
+                ></path>
+                <path d="M14.5 3.5V9H19.5"></path>
+                <path d="M8.5 13h7"></path>
+                <path d="M8.5 16.5h5"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="icon-label">CV</span>
+        </button>
+      </nav>
+
+      <div class="windows-layer" id="windows-layer">
+        <section
+          class="window window--projects"
+          id="window-projects"
+          data-title="Projects"
+          hidden
+        >
+          <header class="window-bar">
+            <h2>Projects</h2>
+            <button
+              class="window-close"
+              type="button"
+              data-close="projects"
+              aria-label="Close Projects"
+            >
+              ×
+            </button>
+          </header>
+          <div class="window-body">
+            <div class="project-grid">
+              <article class="project-card">
+                <img
+                  class="project-image"
+                  src="assets/images/proyek/SWARNA.png"
+                  alt="SWARNA project preview"
+                />
+                <div class="project-content">
+                  <h3>SWARNA</h3>
+                  <div class="project-tags" aria-label="SWARNA technologies">
+                    <span class="project-tag">Web3</span>
+                    <span class="project-tag">NFC</span>
+                  </div>
+                  <p>
+                    A Web3 &amp; NFC ecosystem utilizing smart contracts for
+                    artisan copyright protection and resale royalties.
+                  </p>
+                  <span class="project-link">View details <span>→</span></span>
+                </div>
+              </article>
+              <article class="project-card">
+                <img
+                  class="project-image"
+                  src="assets/images/proyek/CardGuard.png"
+                  alt="Card Guard project preview"
+                />
+                <div class="project-content">
+                  <h3>Card Guard</h3>
+                  <div class="project-tags" aria-label="Card Guard technologies">
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">ML</span>
+                  </div>
+                  <p>
+                    A credit card fraud detection web application built with
+                    Machine Learning &amp; FastAPI.
+                  </p>
+                  <span class="project-link">View details <span>→</span></span>
+                </div>
+              </article>
+              <article class="project-card">
+                <img
+                  class="project-image"
+                  src="assets/images/proyek/FuelMate.png"
+                  alt="FuelMate project preview"
+                />
+                <div class="project-content">
+                  <h3>FuelMate</h3>
+                  <div class="project-tags" aria-label="FuelMate technologies">
+                    <span class="project-tag">Mobile App</span>
+                    <span class="project-tag">UI/UX</span>
+                  </div>
+                  <p>
+                    A fuel tracking and station finder app designed to make
+                    refueling easier, faster, and more organized.
+                  </p>
+                  <span class="project-link">View details <span>→</span></span>
+                </div>
+              </article>
+              <article class="project-card">
+                <img
+                  class="project-image"
+                  src="assets/images/proyek/ClashofBaNG.png"
+                  alt="ClashofBaNG project preview"
+                />
+                <div class="project-content">
+                  <h3>ClashofBaNG</h3>
+                  <div class="project-tags" aria-label="ClashofBaNG technologies">
+                    <span class="project-tag">Game</span>
+                    <span class="project-tag">Java</span>
+                  </div>
+                  <p>
+                    A strategy game project with competitive mechanics,
+                    interactive gameplay, and structured player progression.
+                  </p>
+                  <span class="project-link">View details <span>→</span></span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="window" id="window-skills" data-title="Skills" hidden>
+          <header class="window-bar">
+            <h2>Skills</h2>
+            <button
+              class="window-close"
+              type="button"
+              data-close="skills"
+              aria-label="Close Skills"
+            >
+              ×
+            </button>
+          </header>
+          <div class="window-body">
+            <div class="skills-grid">
+              <article class="skill-group">
+                <h3>Hard Skills</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>C</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                </ul>
+              </article>
+              <article class="skill-group">
+                <h3>Tools</h3>
+                <ul>
+                  <li>Figma</li>
+                  <li>Docker</li>
+                  <li>PostgreSQL</li>
+                  <li>MySQL</li>
+                </ul>
+              </article>
+              <article class="skill-group">
+                <h3>Soft Skills</h3>
+                <ul>
+                  <li>Team Leadership</li>
+                  <li>Event Coordination</li>
+                  <li>Project Management</li>
+                  <li>Public Speaking</li>
+                </ul>
+              </article>
+              <article class="skill-group">
+                <h3>Languages</h3>
+                <ul>
+                  <li>Indonesian (Native)</li>
+                  <li>English</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="window window--about"
+          id="window-about"
+          data-title="About"
+        >
+          <header class="window-bar">
+            <h2>About</h2>
+            <button
+              class="window-close"
+              type="button"
+              data-close="about"
+              aria-label="Close About"
+            >
+              ×
+            </button>
+          </header>
+          <div class="window-body">
+            <div class="about-layout">
+              <img
+                class="about-photo"
+                src="image_ac9aa4.jpg"
+                alt="Portrait of Muhammad Hanif Afifudin"
+              />
+              <div class="about-copy">
+                <dl class="about-facts">
+                  <div>
+                    <dt>Name</dt>
+                    <dd>Muhammad Hanif Afifudin</dd>
+                  </div>
+                  <div>
+                    <dt>Major</dt>
+                    <dd>Computer Science - Software Engineering</dd>
+                  </div>
+                  <div>
+                    <dt>Term</dt>
+                    <dd>5th Semester</dd>
+                  </div>
+                </dl>
+
+                <p class="about-bio">
+                  Aspiring AI / Software Engineer &amp; IT Officer. Experienced
+                  in backend architecture, Web3 integration, and organizational
+                  leadership.
+                </p>
+
+                <h3 class="about-heading">Notable Highlights:</h3>
+                <ul class="about-list">
+                  <li>
+                    Secretary of HIMTI (Himpunan Mahasiswa Teknik Informatika)
+                    BINUS @Bekasi (2026/2027)
+                  </li>
+                  <li>
+                    Backend Developer for Card Guard (Fraud Detection System)
+                  </li>
+                  <li>Volunteer at Codeavour 2026 Jakarta</li>
+                </ul>
+
+                <h3 class="about-heading">Language:</h3>
+                <ul class="about-list">
+                  <li>Indonesian – Native</li>
+                  <li>English</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="window" id="window-contact" data-title="Contact" hidden>
+          <header class="window-bar">
+            <h2>Contact</h2>
+            <button
+              class="window-close"
+              type="button"
+              data-close="contact"
+              aria-label="Close Contact"
+            >
+              ×
+            </button>
+          </header>
+          <div class="window-body contact-body">
+            <p>
+              <span>GitHub:</span>
+              <a
+                href="https://github.com/hanifmuhammad13"
+                target="_blank"
+                rel="noopener noreferrer"
+                >hanifmuhammad13</a
+              >
+            </p>
+            <p>
+              <span>Instagram:</span>
+              <a
+                href="https://instagram.com/hanmadaf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >hanmadaf</a
+              >
+            </p>
+            <a class="email-btn" href="mailto:?subject=Hello%20Hanif"
+              >Send Email</a
+            >
+          </div>
+        </section>
+
+        <section class="window window--cv" id="window-cv" data-title="CV" hidden>
+          <header class="window-bar">
+            <h2>Curriculum Vitae</h2>
+            <button
+              class="window-close"
+              type="button"
+              data-close="cv"
+              aria-label="Close CV"
+            >
+              ×
+            </button>
+          </header>
+          <div class="window-body cv-body">
+            <iframe
+              class="cv-viewer"
+              src="assets/images/proyek/CV_Muhammad_Hanif_Afifudin.pdf#view=FitH"
+              title="CV Muhammad Hanif Afifudin"
+            ></iframe>
+          </div>
+        </section>
+      </div>
+
+      <footer class="taskbar"></footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
