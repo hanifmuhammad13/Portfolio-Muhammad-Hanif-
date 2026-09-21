@@ -1,7 +1,8 @@
 (function () {
   const icons = document.querySelectorAll(".icon[data-window]");
   const closeButtons = document.querySelectorAll("[data-close]");
-  const windowsLayer = document.getElementById("windows-layer");
+  const taskbarApps = document.getElementById("taskbar-apps");
+  const clock = document.getElementById("clock");
   let zIndex = 10;
 
   function getWindow(id) {
@@ -15,67 +16,29 @@
   function focusWindow(win) {
     zIndex += 1;
     win.style.zIndex = String(zIndex);
+    document.querySelectorAll(".task-btn").forEach(function (btn) {
+      btn.classList.toggle(
+        "is-active",
+        btn.dataset.focus === win.id.replace("window-", ""),
+      );
+    });
   }
 
-  function clamp(value, min, max) {
-    return Math.min(Math.max(value, min), max);
-  }
-
-  function makeWindowDraggable(win) {
-    const bar = win.querySelector(".window-bar");
-    let dragState = null;
-
-    if (!bar || !windowsLayer) return;
-
-    bar.addEventListener("pointerdown", function (event) {
-      if (event.button !== 0 && event.pointerType === "mouse") return;
-      if (event.target.closest(".window-close")) return;
-      if (!isOpen(win)) return;
-
-      const layerRect = windowsLayer.getBoundingClientRect();
-      const winRect = win.getBoundingClientRect();
-
-      focusWindow(win);
-      win.style.transform = "none";
-      win.style.left = winRect.left - layerRect.left + "px";
-      win.style.top = winRect.top - layerRect.top + "px";
-
-      dragState = {
-        offsetX: event.clientX - winRect.left,
-        offsetY: event.clientY - winRect.top,
-      };
-
-      win.classList.add("is-dragging");
-      bar.setPointerCapture(event.pointerId);
-      event.preventDefault();
+  function renderTaskbar() {
+    const openWindows = document.querySelectorAll(".window:not([hidden])");
+    taskbarApps.innerHTML = "";
+    openWindows.forEach(function (win) {
+      const id = win.id.replace("window-", "");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "task-btn is-active";
+      btn.dataset.focus = id;
+      btn.textContent = win.dataset.title || id;
+      btn.addEventListener("click", function () {
+        focusWindow(win);
+      });
+      taskbarApps.appendChild(btn);
     });
-
-    bar.addEventListener("pointermove", function (event) {
-      if (!dragState) return;
-
-      const layerRect = windowsLayer.getBoundingClientRect();
-      const maxLeft = Math.max(0, layerRect.width - win.offsetWidth);
-      const maxTop = Math.max(0, layerRect.height - win.offsetHeight);
-      const nextLeft = event.clientX - layerRect.left - dragState.offsetX;
-      const nextTop = event.clientY - layerRect.top - dragState.offsetY;
-
-      win.style.left = clamp(nextLeft, 0, maxLeft) + "px";
-      win.style.top = clamp(nextTop, 0, maxTop) + "px";
-    });
-
-    function stopDrag(event) {
-      if (!dragState) return;
-
-      dragState = null;
-      win.classList.remove("is-dragging");
-
-      if (bar.hasPointerCapture(event.pointerId)) {
-        bar.releasePointerCapture(event.pointerId);
-      }
-    }
-
-    bar.addEventListener("pointerup", stopDrag);
-    bar.addEventListener("pointercancel", stopDrag);
   }
 
   function openWindow(id) {
@@ -83,12 +46,14 @@
     if (!win) return;
     win.hidden = false;
     focusWindow(win);
+    renderTaskbar();
   }
 
   function closeWindow(id) {
     const win = getWindow(id);
     if (!win) return;
     win.hidden = true;
+    renderTaskbar();
   }
 
   icons.forEach(function (icon) {
@@ -108,8 +73,25 @@
     win.addEventListener("mousedown", function () {
       if (isOpen(win)) focusWindow(win);
     });
-    makeWindowDraggable(win);
   });
+
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    const date = now.toLocaleDateString([], {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+    });
+    clock.textContent = date + "  " + time;
+    clock.dateTime = now.toISOString();
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
 
   window.onload = function () {
     openWindow("about");
