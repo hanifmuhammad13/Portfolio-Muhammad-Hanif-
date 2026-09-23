@@ -186,7 +186,14 @@
                     A Web3 &amp; NFC ecosystem utilizing smart contracts for
                     artisan copyright protection and resale royalties.
                   </p>
-                  <span class="project-link">View details <span>→</span></span>
+                  <button
+                    class="project-link"
+                    type="button"
+                    data-project="swarna"
+                    aria-label="View SWARNA project details"
+                  >
+                    View details <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </article>
               <article class="project-card">
@@ -208,7 +215,14 @@
                     A credit card fraud detection web application built with
                     Machine Learning &amp; FastAPI.
                   </p>
-                  <span class="project-link">View details <span>→</span></span>
+                  <button
+                    class="project-link"
+                    type="button"
+                    data-project="cardguard"
+                    aria-label="View Card Guard project details"
+                  >
+                    View details <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </article>
               <article class="project-card">
@@ -227,7 +241,14 @@
                     A fuel tracking and station finder app designed to make
                     refueling easier, faster, and more organized.
                   </p>
-                  <span class="project-link">View details <span>→</span></span>
+                  <button
+                    class="project-link"
+                    type="button"
+                    data-project="fuelmate"
+                    aria-label="View FuelMate project details"
+                  >
+                    View details <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </article>
               <article class="project-card">
@@ -249,7 +270,14 @@
                     A strategy game project with competitive mechanics,
                     interactive gameplay, and structured player progression.
                   </p>
-                  <span class="project-link">View details <span>→</span></span>
+                  <button
+                    class="project-link"
+                    type="button"
+                    data-project="clashofbang"
+                    aria-label="View ClashofBaNG project details"
+                  >
+                    View details <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </article>
             </div>
@@ -454,7 +482,53 @@
         </section>
       </div>
 
-      <footer class="taskbar"></footer>
+      <div
+        class="project-modal"
+        id="project-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        hidden
+      >
+        <div class="project-modal__panel" role="document">
+          <button
+            class="project-modal__close"
+            type="button"
+            aria-label="Close project detail"
+          >
+            ×
+          </button>
+          <div class="project-modal__layout">
+            <figure class="project-modal__media">
+              <img id="project-modal-image" src="" alt="" />
+            </figure>
+            <div class="project-modal__content">
+              <p class="project-modal__eyebrow">Project Detail</p>
+              <h2 id="project-modal-title"></h2>
+              <div
+                class="project-modal__badges"
+                id="project-modal-badges"
+                aria-label="Project technology stack"
+              ></div>
+              <p class="project-modal__description" id="project-modal-description"></p>
+              <a
+                class="project-modal__link"
+                id="project-modal-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="taskbar" aria-label="Workspace status">
+        <div class="taskbar-brand" aria-hidden="true">HANIF / PORTFOLIO</div>
+        <time class="taskbar-clock" id="clock"></time>
+      </footer>
     </div>
 
     <script src="dist/js/script.js"></script>
