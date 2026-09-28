@@ -2,7 +2,9 @@
   const icons = document.querySelectorAll(".icon[data-window]");
   const closeButtons = document.querySelectorAll("[data-close]");
   const clock = document.getElementById("clock");
-  const projectButtons = document.querySelectorAll(".project-link[data-project]");
+  const projectButtons = document.querySelectorAll(
+    ".project-link[data-project]",
+  );
   const projectModal = document.getElementById("project-modal");
   const projectModalClose = projectModal
     ? projectModal.querySelector(".project-modal__close")
@@ -23,7 +25,7 @@
       title: "SWARNA",
       image: "assets/images/proyek/SWARNA.png",
       imageAlt: "SWARNA project preview",
-      stack: ["Web3", "NFC", "Smart Contract"],
+      stack: ["UX Design", "FIGMA", "Mobile App", "Smart Contract"],
       description:
         "SWARNA is a Web3 and NFC ecosystem designed to help artisans protect copyright ownership, verify product authenticity, and receive resale royalties through smart contract logic.",
       url: "https://github.com/hanifmuhammad13",
@@ -33,7 +35,7 @@
       title: "Card Guard",
       image: "assets/images/proyek/CardGuard.png",
       imageAlt: "Card Guard project preview",
-      stack: ["FastAPI", "Machine Learning", "Python"],
+      stack: ["FastAPI", "Machine Learning", "Python", "Mobile App"],
       description:
         "Card Guard is a credit card fraud detection web application that combines machine learning prediction with a FastAPI backend to classify transaction risk in a clear, usable interface.",
       url: "https://github.com/hanifmuhammad13",
@@ -53,9 +55,9 @@
       title: "ClashofBaNG",
       image: "assets/images/proyek/ClashofBaNG.png",
       imageAlt: "ClashofBaNG project preview",
-      stack: ["Game", "Java", "Strategy"],
+      stack: ["Community Web", "HTML/CSS/JS", "Figma"],
       description:
-        "ClashofBaNG is a Java strategy game project with competitive mechanics, interactive gameplay, and structured progression systems built around player decisions and tactical play.",
+        "ClashofBaNG is a frontend prototype for a gaming community website, not a strategy game. The project workflow encompassed UI/UX design in Figma followed by pure frontend implementation using HTML, CSS, and JavaScript.",
       url: "https://github.com/hanifmuhammad13",
       linkLabel: "Open project",
     },
