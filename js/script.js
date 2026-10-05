@@ -57,6 +57,12 @@
     menu.classList.toggle("is-open", open);
     header.classList.toggle("menu-open", open);
   }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("is-open")) {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
   toggle.addEventListener("click", function () {
     setMenu(toggle.getAttribute("aria-expanded") !== "true");
   });
