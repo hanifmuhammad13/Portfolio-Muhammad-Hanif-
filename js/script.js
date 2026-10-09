@@ -10,8 +10,8 @@
       stack: ["UX Design", "FIGMA", "Mobile App", "Smart Contract"],
       description:
         "SWARNA is a Web3 and NFC ecosystem designed to help artisans protect copyright ownership, verify product authenticity, and receive resale royalties through smart contract logic.",
-      url: "https://github.com/hanifmuhammad13",
-      linkLabel: "Open project",
+      url: "https://medium.com/@afifudingoodboy/swarna-empowering-local-artisans-through-phygital-gateway-web3-royalty-ecosystem-bebc11bbb2d8",
+      linkLabel: "Read on Medium",
     },
     cardguard: {
       title: "Card Guard",

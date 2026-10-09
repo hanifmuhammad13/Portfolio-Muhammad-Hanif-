@@ -343,7 +343,8 @@ button {
   flex-wrap: wrap;
   color: var(--muted);
 }
-.tags li + li::before {
+/* separator trails each item, so a wrapped line never starts with "/" */
+.tags li:not(:last-child)::after {
   content: "/";
   margin: 0 0.55em;
   color: var(--line-strong);
@@ -1043,6 +1044,8 @@ button {
   border: 0;
   padding: 0;
   background: transparent;
+  /* <dialog> defaults to black text (CanvasText); inherit the dark-theme body colour */
+  color: var(--ink-2);
   max-width: none;
   max-height: none;
   width: 100%;
@@ -1122,6 +1125,10 @@ button {
   font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   line-height: 1.05;
   letter-spacing: -0.035em;
+}
+.modal__desc {
+  line-height: 1.7;
+  color: var(--ink-2);
 }
 .modal__content .btn {
   margin-top: 6px;
