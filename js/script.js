@@ -46,7 +46,6 @@
   };
 
   const header = document.getElementById("site-header");
-  const progress = document.getElementById("progress");
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("nav-menu");
   const links = Array.from(document.querySelectorAll("[data-link]"));
@@ -75,16 +74,13 @@
     if (!header.contains(e.target)) setMenu(false);
   });
 
-  /* ---------- Scroll: header state + progress bar ---------- */
+  /* ---------- Scroll: header state ---------- */
   let ticking = false;
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(function () {
-      const y = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      header.classList.toggle("is-scrolled", y > 8);
-      progress.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
       ticking = false;
     });
   }
