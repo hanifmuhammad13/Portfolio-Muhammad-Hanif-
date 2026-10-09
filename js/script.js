@@ -200,4 +200,84 @@
       openProject(btn.dataset.project);
     });
   });
+
+  /* ---------- Certificate image preview ---------- */
+  const certModal = document.getElementById("cert-modal");
+  if (certModal) {
+    const cImg = document.getElementById("cert-modal-image");
+    const cTitle = document.getElementById("cert-modal-title");
+    const cLink = document.getElementById("cert-modal-link");
+    let certFocus = null;
+
+    document.querySelectorAll("[data-cert-preview]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        if (typeof certModal.showModal !== "function") return; // fall back to opening the file
+        e.preventDefault();
+        const title = link.querySelector("h3").textContent;
+        certFocus = link;
+        // same image the card shows, so the preview can never point at a missing file
+        cImg.src = link.querySelector("img").currentSrc || link.querySelector("img").src;
+        cImg.alt = title + " certificate";
+        cTitle.textContent = title;
+        cLink.href = link.getAttribute("href");
+        certModal.showModal();
+        document.body.style.overflow = "hidden";
+      });
+    });
+    certModal.querySelector(".modal__close").addEventListener("click", function () {
+      certModal.close();
+    });
+    certModal.addEventListener("click", function (e) {
+      if (e.target === certModal) certModal.close();
+    });
+    certModal.addEventListener("close", function () {
+      document.body.style.overflow = "";
+      cImg.removeAttribute("src");
+      if (certFocus) certFocus.focus();
+    });
+  }
+
+  /* ---------- Showcase tabs ---------- */
+  const tablist = document.querySelector(".tabs[role='tablist']");
+  if (tablist) {
+    const tabs = Array.from(tablist.querySelectorAll("[role='tab']"));
+
+    function select(i, focus) {
+      tabs.forEach(function (tab, j) {
+        const on = i === j;
+        const panel = document.getElementById(tab.getAttribute("aria-controls"));
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+        if (on && panel.hidden) {
+          panel.hidden = false;
+          panel.classList.remove("is-entering");
+          void panel.offsetWidth; // restart the fade-in
+          panel.classList.add("is-entering");
+        } else if (!on) {
+          panel.hidden = true;
+        }
+      });
+      tablist.style.setProperty("--tab", i);
+      if (focus) tabs[i].focus();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () {
+        select(i);
+      });
+    });
+    tablist.addEventListener("keydown", function (e) {
+      const current = tabs.indexOf(document.activeElement);
+      if (current < 0) return;
+      let next = null;
+      if (e.key === "ArrowRight") next = (current + 1) % tabs.length;
+      if (e.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
+      if (e.key === "Home") next = 0;
+      if (e.key === "End") next = tabs.length - 1;
+      if (next !== null) {
+        e.preventDefault();
+        select(next, true);
+      }
+    });
+  }
 })();

@@ -8,7 +8,13 @@
       name="description"
       content="Portfolio of Muhammad Hanif Afifudin, Computer Science (Software Engineering) student at BINUS University."
     />
-    <link rel="icon" href="assets/icon/icon.jpeg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/icon/favicon-round.png"
+    />
+    <link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,7 +54,6 @@
             <li><a href="#projects" data-link>Project</a></li>
             <li><a href="#experience" data-link>Experience</a></li>
             <li><a href="#cv" data-link>CV</a></li>
-            <li><a href="#skills" data-link>Skills</a></li>
             <li><a href="#contact" data-link>Contact</a></li>
           </ul>
         </nav>
@@ -105,28 +110,18 @@
               <li>
                 <a
                   class="icon-btn"
-                  href="https://instagram.com/hanmadaf"
+                  href="https://www.linkedin.com/in/m-hanifafif/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  aria-label="LinkedIn"
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    fill="currentColor"
                     aria-hidden="true"
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1"
-                      fill="currentColor"
-                      stroke="none"
+                    <path
+                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
                     />
                   </svg>
                 </a>
@@ -182,7 +177,7 @@
         </div>
       </section>
 
-      <!-- ============ PROJECTS ============ -->
+      <!-- ============ PROJECTS (tabs: projects / certificates / tech stack) ============ -->
       <section
         class="section section--projects"
         id="projects"
@@ -197,138 +192,516 @@
             <h2 id="projects-title">Projects</h2>
           </header>
 
-          <div class="project-grid">
-            <article
-              class="project-card project-card--feature"
-              data-animate="fade-up"
-            >
-              <div class="project-card__media">
-                <img
-                  src="assets/images/proyek/SWARNA.webp"
-                  alt="SWARNA project preview"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__body">
-                <h3>SWARNA</h3>
-                <ul class="tags" aria-label="SWARNA technologies">
-                  <li>UX Design</li>
-                  <li>FIGMA</li>
-                  <li>Mobile App</li>
-                </ul>
-                <p>
-                  A Web3 &amp; NFC ecosystem utilizing smart contracts for
-                  artisan copyright protection and resale royalties.
-                </p>
-                <button
-                  class="link-btn"
-                  type="button"
-                  data-project="swarna"
-                  aria-label="View SWARNA project details"
-                >
-                  View details <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </article>
+          <div class="showcase" data-animate="fade-up">
+            <div class="tabs" role="tablist" aria-label="Portfolio showcase">
+              <span class="tabs__pill" aria-hidden="true"></span>
+              <button
+                class="tabs__tab"
+                type="button"
+                role="tab"
+                id="tab-projects"
+                aria-controls="panel-projects"
+                aria-selected="true"
+              >
+                Projects
+              </button>
+              <button
+                class="tabs__tab"
+                type="button"
+                role="tab"
+                id="tab-certificates"
+                aria-controls="panel-certificates"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                Certificates
+              </button>
+              <button
+                class="tabs__tab"
+                type="button"
+                role="tab"
+                id="tab-stack"
+                aria-controls="panel-stack"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                Tech Stack
+              </button>
+            </div>
 
-            <article
-              class="project-card project-card--feature"
-              data-animate="fade-up"
+            <div
+              class="tab-panel"
+              role="tabpanel"
+              id="panel-projects"
+              aria-labelledby="tab-projects"
+              tabindex="0"
             >
-              <div class="project-card__media">
-                <img
-                  src="assets/images/proyek/CardGuard.webp"
-                  alt="Card Guard project preview"
-                  loading="lazy"
-                />
+              <div class="project-grid">
+                <article class="project-card">
+                  <div class="project-card__media">
+                    <img
+                      src="assets/images/proyek/SWARNA.webp"
+                      alt="SWARNA project preview"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3>SWARNA</h3>
+                    <ul class="tags" aria-label="SWARNA technologies">
+                      <li>UX Design</li>
+                      <li>FIGMA</li>
+                      <li>Mobile App</li>
+                    </ul>
+                    <p>
+                      A Web3 &amp; NFC ecosystem utilizing smart contracts for
+                      artisan copyright protection and resale royalties.
+                    </p>
+                  </div>
+                  <div class="project-card__foot">
+                    <span class="project-card__index" aria-hidden="true"
+                      >01</span
+                    >
+                    <button
+                      class="link-btn"
+                      type="button"
+                      data-project="swarna"
+                      aria-label="View SWARNA project details"
+                    >
+                      View details <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-card__media">
+                    <img
+                      src="assets/images/proyek/CardGuard.webp"
+                      alt="Card Guard project preview"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3>Card Guard</h3>
+                    <ul class="tags" aria-label="Card Guard technologies">
+                      <li>FastAPI</li>
+                      <li>ML</li>
+                      <li>Mobile App</li>
+                    </ul>
+                    <p>
+                      A credit card fraud detection web application built with
+                      Machine Learning &amp; FastAPI.
+                    </p>
+                  </div>
+                  <div class="project-card__foot">
+                    <span class="project-card__index" aria-hidden="true"
+                      >02</span
+                    >
+                    <button
+                      class="link-btn"
+                      type="button"
+                      data-project="cardguard"
+                      aria-label="View Card Guard project details"
+                    >
+                      View details <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-card__media">
+                    <img
+                      src="assets/images/proyek/FuelMate.webp"
+                      alt="FuelMate project preview"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3>FuelMate</h3>
+                    <ul class="tags" aria-label="FuelMate technologies">
+                      <li>Mobile App</li>
+                      <li>UI/UX</li>
+                    </ul>
+                    <p>
+                      A fuel tracking and station finder app designed to make
+                      refueling easier, faster, and more organized.
+                    </p>
+                  </div>
+                  <div class="project-card__foot">
+                    <span class="project-card__index" aria-hidden="true"
+                      >03</span
+                    >
+                    <button
+                      class="link-btn"
+                      type="button"
+                      data-project="fuelmate"
+                      aria-label="View FuelMate project details"
+                    >
+                      View details <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-card__media">
+                    <img
+                      src="assets/images/proyek/ClashofBaNG.webp"
+                      alt="ClashofBaNG project preview"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3>ClashofBaNG</h3>
+                    <ul class="tags" aria-label="ClashofBaNG technologies">
+                      <li>Community Web</li>
+                      <li>HTML/CSS/JS</li>
+                      <li>Figma</li>
+                    </ul>
+                    <p>
+                      A frontend prototype for a gaming community website,
+                      designed in Figma and implemented with HTML, CSS, and
+                      JavaScript.
+                    </p>
+                  </div>
+                  <div class="project-card__foot">
+                    <span class="project-card__index" aria-hidden="true"
+                      >04</span
+                    >
+                    <button
+                      class="link-btn"
+                      type="button"
+                      data-project="clashofbang"
+                      aria-label="View ClashofBaNG project details"
+                    >
+                      View details <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
               </div>
-              <div class="project-card__body">
-                <h3>Card Guard</h3>
-                <ul class="tags" aria-label="Card Guard technologies">
-                  <li>FastAPI</li>
-                  <li>ML</li>
-                  <li>Mobile App</li>
-                </ul>
-                <p>
-                  A credit card fraud detection web application built with
-                  Machine Learning &amp; FastAPI.
-                </p>
-                <button
-                  class="link-btn"
-                  type="button"
-                  data-project="cardguard"
-                  aria-label="View Card Guard project details"
-                >
-                  View details <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </article>
+            </div>
 
-            <article
-              class="project-card project-card--feature"
-              data-animate="fade-up"
-              data-delay="100"
+            <div
+              class="tab-panel"
+              role="tabpanel"
+              id="panel-certificates"
+              aria-labelledby="tab-certificates"
+              tabindex="0"
+              hidden
             >
-              <div class="project-card__media">
-                <img
-                  src="assets/images/proyek/FuelMate.webp"
-                  alt="FuelMate project preview"
-                  loading="lazy"
-                />
+              <div class="cert-grid">
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/IntroductionToCloud.webp" data-cert-preview aria-label="View Introduction to Cloud certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/IntroductionToCloud.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>Introduction to Cloud</h3>
+                      <p class="cert-card__role">Course Certificate (CC0101EN, provided by IBM)</p>
+                      <p class="cert-card__meta">Cognitive Class · 2 Oct 2026</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/Codeavour70.webp" data-cert-preview aria-label="View Codeavour 7.0 International Finale certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/Codeavour70.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>Codeavour 7.0 International Finale</h3>
+                      <p class="cert-card__role">Certificate of Recognition · Volunteer</p>
+                      <p class="cert-card__meta">Future Skills Education Foundation · 17 May 2026</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/InnovationLeaders.webp" data-cert-preview aria-label="View Innovation Leaders Workshop certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/InnovationLeaders.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>Innovation Leaders Workshop</h3>
+                      <p class="cert-card__role">Certificate of Participation</p>
+                      <p class="cert-card__desc">Certificate of Participation for attending the Innovation Leaders Workshop on Coding, AI, and Robotics, powered by STEMpedia.</p>
+                      <p class="cert-card__meta">STEMpedia · Codeavour 7.0</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/HiletMentor.webp" data-cert-preview aria-label="View HILET 2026: Interstellar Leadership Mission certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/HiletMentor.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>HILET 2026: Interstellar Leadership Mission</h3>
+                      <p class="cert-card__role">Staff of Mentor Division</p>
+                      <p class="cert-card__meta">HIMTI BINUS University · 14–21 Dec 2025</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/cvAts.webp" data-cert-preview aria-label="View Pre Event Law Career Academy Vol. IV certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/cvAts.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>Pre Event Law Career Academy Vol. IV</h3>
+                      <p class="cert-card__role">Participant</p>
+                      <p class="cert-card__desc">Participant in a workshop on creating an ATS-friendly CV.</p>
+                      <p class="cert-card__meta">18–19 Oct 2025</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/Techno.webp" data-cert-preview aria-label="View TECHNO 2025 certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/Techno.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>TECHNO 2025</h3>
+                      <p class="cert-card__role">Coordinator of Visualization Division</p>
+                      <p class="cert-card__meta">HIMTI BINUS University · 28 Sep 2025</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/CloudFrontier.webp" data-cert-preview aria-label="View The Cloud Frontier: Exploring Next-Gen Innovation certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/CloudFrontier.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>The Cloud Frontier: Exploring Next-Gen Innovation</h3>
+                      <p class="cert-card__role">Workshop</p>
+                      <p class="cert-card__desc">Certificate of Completion for attending &quot;The Cloud Frontier: Exploring Next-Gen Innovation,&quot; organized by HIMTI BINUS University in collaboration with CTI Group and iCCom.</p>
+                      <p class="cert-card__meta">HIMTI BINUS University × CTI Group &amp; iCCom · 24 Sep 2025</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="cert-card">
+                  <a class="cert-card__link" href="assets/images/Sertificate/previews/VolunteerKDM.webp" data-cert-preview aria-label="View Jambore Futsal Anak 2024 certificate">
+                    <div class="cert-card__media">
+                      <img src="assets/images/Sertificate/previews/VolunteerKDM.webp" alt="" loading="lazy" />
+                    </div>
+                    <div class="cert-card__body">
+                      <h3>Jambore Futsal Anak 2024</h3>
+                      <p class="cert-card__role">Relawan Pencatat Skor</p>
+                      <p class="cert-card__meta">Yayasan Kampus Diakoneia Modern · 6 Oct 2024</p>
+                    </div>
+                  </a>
+                </article>
               </div>
-              <div class="project-card__body">
-                <h3>FuelMate</h3>
-                <ul class="tags" aria-label="FuelMate technologies">
-                  <li>Mobile App</li>
-                  <li>UI/UX</li>
-                </ul>
-                <p>
-                  A fuel tracking and station finder app designed to make
-                  refueling easier, faster, and more organized.
-                </p>
-                <button
-                  class="link-btn"
-                  type="button"
-                  data-project="fuelmate"
-                  aria-label="View FuelMate project details"
-                >
-                  View details <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </article>
+            </div>
 
-            <article
-              class="project-card project-card--feature"
-              data-animate="fade-up"
+            <div
+              class="tab-panel"
+              role="tabpanel"
+              id="panel-stack"
+              aria-labelledby="tab-stack"
+              tabindex="0"
+              hidden
             >
-              <div class="project-card__media">
-                <img
-                  src="assets/images/proyek/ClashofBaNG.webp"
-                  alt="ClashofBaNG project preview"
-                  loading="lazy"
-                />
+              <div class="tech-groups">
+                <div class="tech-group">
+                  <h3 class="tech-group__title">Languages</h3>
+                  <ul class="tech-grid">
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/HTML5.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">HTML5</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/css3.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">CSS3</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/javascript.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">JavaScript</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/C.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">C</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/python.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Python</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/java.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Java</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tech-group">
+                  <h3 class="tech-group__title">Frameworks</h3>
+                  <ul class="tech-grid">
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/tailwind.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Tailwind CSS</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tech-group">
+                  <h3 class="tech-group__title">Tools &amp; Databases</h3>
+                  <ul class="tech-grid">
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/figma.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Figma</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/canva.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Canva</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/github.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">GitHub</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/vscode.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">VS Code</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/docker.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Docker</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/PostgreSql.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">PostgreSQL</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/MySQL.svg"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">MySQL</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/Dbeaver.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">DBeaver</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/supabase.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Supabase</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/vercel.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Vercel</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/railway.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Railway</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/medium.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Medium</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/eclipse.svg"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Eclipse</span>
+                    </li>
+                    <li class="tech-card">
+                      <span class="tech-card__icon" aria-hidden="true"
+                        ><img
+                          src="assets/images/tools/googleCollab.png"
+                          alt=""
+                          loading="lazy"
+                      /></span>
+                      <span class="tech-card__name">Google Colab</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="project-card__body">
-                <h3>ClashofBaNG</h3>
-                <ul class="tags" aria-label="ClashofBaNG technologies">
-                  <li>Community Web</li>
-                  <li>HTML/CSS/JS</li>
-                  <li>Figma</li>
-                </ul>
-                <p>
-                  A frontend prototype for a gaming community website, designed
-                  in Figma and implemented with HTML, CSS, and JavaScript.
-                </p>
-                <button
-                  class="link-btn"
-                  type="button"
-                  data-project="clashofbang"
-                  aria-label="View ClashofBaNG project details"
-                >
-                  View details <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -598,59 +971,6 @@
         </div>
       </section>
 
-      <!-- ============ SKILLS ============ -->
-      <section class="section" id="skills" aria-labelledby="skills-title">
-        <div class="container">
-          <div class="panel skills" data-animate="fade-up">
-            <div class="panel__head">
-              <header class="section__head">
-                <p class="section__kicker">05</p>
-                <h2 id="skills-title">Skills</h2>
-              </header>
-            </div>
-
-            <div class="skills-grid">
-              <article class="skill-card">
-                <h3>Hard Skills</h3>
-                <ul class="chips">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                  <li>C</li>
-                  <li>Python</li>
-                  <li>Java</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3>Tools</h3>
-                <ul class="chips">
-                  <li>Figma</li>
-                  <li>Docker</li>
-                  <li>PostgreSQL</li>
-                  <li>MySQL</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3>Soft Skills</h3>
-                <ul class="chips">
-                  <li>Team Leadership</li>
-                  <li>Event Coordination</li>
-                  <li>Project Management</li>
-                  <li>Public Speaking</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3>Languages</h3>
-                <ul class="chips">
-                  <li>Indonesian (Native)</li>
-                  <li>English</li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ============ CONTACT ============ -->
       <section
         class="section section--contact"
@@ -660,7 +980,7 @@
         <div class="container">
           <div class="panel panel--dark contact" data-animate="fade-up">
             <header class="section__head">
-              <p class="section__kicker">06</p>
+              <p class="section__kicker">05</p>
               <h2 id="contact-title">Contact</h2>
             </header>
 
@@ -806,6 +1126,35 @@
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
+
+    <!-- ============ CERTIFICATE PREVIEW ============ -->
+    <dialog
+      class="modal cert-modal"
+      id="cert-modal"
+      aria-label="Certificate preview"
+    >
+      <div class="cert-modal__panel">
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close certificate preview"
+        >
+          ×
+        </button>
+        <img id="cert-modal-image" src="" alt="" />
+        <div class="cert-modal__bar">
+          <p id="cert-modal-title"></p>
+          <a
+            class="btn btn--ghost btn--sm"
+            id="cert-modal-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open in new tab</a
+          >
+        </div>
+      </div>
+    </dialog>
 
     <!-- ============ PROJECT MODAL ============ -->
     <dialog
